@@ -1,2 +1,43 @@
-Total: {{ total }}
-Speed: {{ speed}}
+<div class="row">
+  <div class="col-sm-12 col-m-6">
+    <div class="card border-primary mb-2">
+      <div class="card-header">
+        Slow
+      </div>
+      <pre>
+        <code>
+          addUpTo(num) {{ '{' }}
+            let total = 0;
+            for (let i = 1; i <= num; i++) {{ '{' }}
+              total += i;
+            {{ '}' }}
+            return total;
+          {{ '}' }}
+        </code>
+      </pre>
+      <div class="card-body">
+        <p>First Total: {{ total }}</p>
+        <p>First Speed: {{ speed }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-m-6">
+    <div class="card border-primary">
+      <div class="card-header">
+        Fast
+      </div>
+      <pre>
+        <code>
+          addUpToo(num) {{ '{' }}
+            return num * (num + 1) / 2;
+          {{ '}' }}
+        </code>
+      </pre>
+      <div class="card-body">
+        <p>Second Total: {{ total2 }}</p>
+        <p>Second Speed: {{ speed2 }}</p>
+      </div>
+    </div>
+  </div>
+</div>

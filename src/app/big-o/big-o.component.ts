@@ -7,15 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BigOComponent implements OnInit {
   total: any;
+  total2: any;
   speed: any;
+  speed2: any;
 
   constructor() { }
 
   ngOnInit() {
-    const time1 = performance.now();
+    let time1 = performance.now();
     this.total = this.addUpTo(6);
-    const time2 = performance.now();
+    let time2 = performance.now();
     this.speed = (time2 - time1) / 1000;
+
+    time1 = performance.now();
+    this.total2 = this.addUpToo(6);
+    time2 = performance.now();
+    this.speed2 = (time2 - time1) / 1000;
   }
 
   addUpTo(num) {
@@ -24,6 +31,10 @@ export class BigOComponent implements OnInit {
       total += i;
     }
     return total;
+  }
+
+  addUpToo(num) {
+    return num * (num + 1) / 2;
   }
 
 }
