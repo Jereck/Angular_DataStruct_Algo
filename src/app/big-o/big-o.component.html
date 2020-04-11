@@ -1,42 +1,80 @@
+<div class="jumbotron">
+  <h1 class="display-1">Big O Notation</h1>
+  <p class="lead">How the runtime of an algorithm grows as the inputs grow</p>
+</div>
+
+<blockquote class="blockquote">
+  <p class="mb-0">
+    We say that an algorithm of <strong>O(f(n))</strong> if the number of simple operations the
+    computer has to do is eventually less than a constant times <strong>f(n)</strong>, as <strong>n</strong> increases.
+  </p>
+  <ul>
+    <li>f(n) could be linear (f(n) = n)</li>
+    <li>f(n) could be quadratic (f(n) = n<sup>2</sup>)</li>
+    <li>f(n) could be constant (f(n) = 1)</li>
+    <li>f(n) could be something entirely different!</li>
+  </ul>
+</blockquote>
+
 <div class="row">
-  <div class="col-sm-12 col-m-6">
-    <div class="card border-primary mb-2">
+  <div class="col-sm-4 col-m-6">
+    <div class="card border-primary">
       <div class="card-header">
-        Slow
+        Big O Notation: <strong>O(1)</strong>
       </div>
-      <pre>
-        <code>
-          addUpTo(num) {{ '{' }}
-            let total = 0;
-            for (let i = 1; i <= num; i++) {{ '{' }}
-              total += i;
-            {{ '}' }}
-            return total;
-          {{ '}' }}
-        </code>
-      </pre>
       <div class="card-body">
-        <p>First Total: {{ total }}</p>
-        <p>First Speed: {{ speed }}</p>
+        <p>Always 3 operations</p>
+        <pre>
+          <code>
+            function <span class="func-text">addUpToo</span>(n) {{ '{' }}
+              <span class="func-text">return</span> n * (n + 1) / 2;
+            {{ '}' }}
+          </code>
+        </pre>
       </div>
     </div>
   </div>
 
-  <div class="col-sm-12 col-m-6">
+  <div class="col-sm-4 col-m-6">
+    <div class="card border-primary mb-2">
+      <div class="card-header">
+        Big O Notation: <strong>O(n)</strong>
+      </div>
+      <div class="card-body">
+        <p>Number of operations is bounded by a multiple of <var>n</var> (say, 10<var>n</var>)</p>
+        <pre>
+          <code>
+            function <span class="func-text">addUpTo</span>(n) {{ '{' }}
+              let total = 0;
+              for (let i = 1; i <= n; i++) {{ '{' }}
+                total += i;
+              {{ '}' }}
+              <span class="func-text">return</span> total;
+            {{ '}' }}
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4 col-m-6">
     <div class="card border-primary">
       <div class="card-header">
-        Fast
+        Big O Notation: <strong>O(n<sup>2</sup>)</strong>
       </div>
-      <pre>
-        <code>
-          addUpToo(num) {{ '{' }}
-            return num * (num + 1) / 2;
-          {{ '}' }}
-        </code>
-      </pre>
       <div class="card-body">
-        <p>Second Total: {{ total2 }}</p>
-        <p>Second Speed: {{ speed2 }}</p>
+        <p>O(n) operation inside of an O(n) operation.</p>
+        <pre>
+          <code>
+            function <span class="func-text">printAllPairs</span>(n) {{ '{' }}
+              for(let i = 0; i < n; i++) {{ '{' }}
+                for(let j = 0; j < n; j++) {{ '{' }}
+                <span class="func-text">return</span> [i, j];
+                {{ '}' }}
+              {{ '}' }}
+            {{ '}' }}
+          </code>
+        </pre>
       </div>
     </div>
   </div>

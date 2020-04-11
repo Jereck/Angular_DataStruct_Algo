@@ -15,12 +15,12 @@ export class BigOComponent implements OnInit {
 
   ngOnInit() {
     let time1 = performance.now();
-    this.total = this.addUpTo(6);
+    this.total = this.addUpTo(1000000);
     let time2 = performance.now();
     this.speed = (time2 - time1) / 1000;
 
     time1 = performance.now();
-    this.total2 = this.addUpToo(6);
+    this.total2 = this.addUpToo(1000000);
     time2 = performance.now();
     this.speed2 = (time2 - time1) / 1000;
   }
@@ -35,6 +35,14 @@ export class BigOComponent implements OnInit {
 
   addUpToo(num) {
     return num * (num + 1) / 2;
+  }
+
+  printAllPairs(num) {
+    for (let i = 0; i < num; i++) {
+      for (let j = 0; j < num; j++) {
+        return [i, j];
+      }
+    }
   }
 
 }
